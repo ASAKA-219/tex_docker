@@ -1,0 +1,254 @@
+\documentclass[uplatex,a4paper,11pt,dvipdfmx]{jsarticle}
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{ulem}
+\renewcommand{\thesection}{\S\arabic{section}}
+\begin{document}
+\begin{enumerate}
+    \item {\bf (A)}\\
+    \begin{equation*}
+        \(
+        t^3-15t^2+90t-324=0
+        \)
+    \end{equation*}
+    \\
+
+    まず, t - 15 = aとすると, t = a + 5より, (A)は\\
+
+    \begin{align*}
+        \(
+        (a+5)^3-15 (a+5)^2+90 (a+5)-324=0\\
+        & a^3+15a^2+75a+125-15 (a^2+10a+25)+90 (a+5)-324=0\\
+        & a^3+15a+125-375+450-324=0\\
+        & a^3+15a-250+126=0\\
+        & a^3+15a-124=0
+        \)
+    \end{align*}
+    \\
+
+    上式のaの係数15=p, 定数項\(-124=q\)とおいておく.\\
+    また, 新しくa = u + vとすると\\
+
+    \begin{align*}
+        \(
+            (u+v)^3+15 (u+v)-124=0\\
+            & u^3+v^3+ (3uv+15) (u+v)-124=0
+        \)
+    \end{align*}\\
+
+    ここで, \(u+v\neq 0\)のとき\\
+    \begin{align*}
+        \(
+            u^3+v^3-124=0\\
+            uv=-5
+        \)
+    \end{align*}\\
+
+    となり, uとvは二次方程式の解と係数の関係を使って\\
+    \(X^2+qX-\left(\frac{p}{3}\right)^3\)の解なので\\
+
+    \begin{equation*}
+        \(
+        X=-\frac{q}{2}\pm \sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+        \)
+    \end{equation*}
+    \\
+
+    これを使うと\\
+
+    \begin{align*}
+        \(
+            & u^3, v^3=-\frac{q}{2}\pm \sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}\\
+            &= 62\pm \sqrt{62^2+5^3}\\
+            &= 62\pm \sqrt{3844+125}\\
+            &= 62\pm \sqrt{3969}\\
+            &= 62\pm 63\\
+            &= 125, -1\\
+        \)
+    \end{align*}
+    \\
+    \(1, \omega , \omega^2\)を1の3乗根\((\omega ^3=1の解)\)だとすると\\
+    \begin{equation*}
+        \(
+            u,v=5, 5\omega, 5\omega ^2, -1, -\omega, -\omega^2
+        \)
+    \end{equation*}
+    \\
+
+    ここで, \(uv=-5\)という関係を使うと\\
+
+    \begin{equation*}
+        \(
+        (u,v) =(5, -1), (5\omega, -\omega^2), (5\omega^2, -\omega)
+        \)
+    \end{equation*}
+    と分かる. \\
+    a=u+v, t=a+5だったので\\
+
+    \begin{align*}
+        \(
+        a=u+v=4, -2\pm 3\sqrt{3}i\\
+        & \rightarrow t=a+5=9, 3\pm 3\sqrt{3}i
+        \)
+    \end{align*}
+    \\
+
+    よって答えは\\
+    \begin{equation*}
+        \(
+        \underline{t=9, 3\pm 3\sqrt{3}i}
+        \)
+    \end{equation*}
+    \\
+
+    \item {\bf (B)}\\
+    \begin{equation*}
+        \(
+            y^4+4y^2+24y-20=0
+        \)
+    \end{equation*}
+    \\
+
+    まず, \(y^3\)の項が0なので, \(y^2\)以降の項を移項して\\
+
+    \begin{equation*}
+        \(
+        y^4=-4y^2-24y+20
+        \)
+    \end{equation*}\\
+
+    また, 両辺に\(2ty^2+t^2\)を足し合わせると\\
+
+    \begin{align*}
+        \(
+        y^4+2ty^2+t^2=\\
+        & (y^2+t)^2= (2t-4)y^2-24y+ (20+t^2)
+        \)
+    \end{align*}
+    \\
+
+    上の式で両辺が等しい重解tを持つには判別式D=0が必要なので\\
+    \begin{align*}
+        \(
+        D=24^2-4 (2t-4) (20+t^2)\\
+        &= 576-4 (40t+2t^3-80-4t^2)\\
+        &= 576-160t-8t^3+320+16t^2\\
+        &= -8t^3+16t^2-160t+896
+        \)
+    \end{align*}
+    \\
+    \begin{equation}
+        \(
+        = t^3-2t^2+20t-112=0 \label{siki}
+        \)
+    \end{equation}
+
+    この3次方程式を解き, tの重解を見つける.\\
+    \(t-\frac{2}{3}=a\)と置くと, \(t=a+\frac{2}{3}\)より\\
+
+    \begin{align*}
+        \(
+        \left(a+\frac{2}{3}\right)^3-2\left(a+\frac{2}{3}\right)^2+20\left(a+\frac{2}{3}\right)-112=0\\
+        &= a^3+2a^2+\frac{4}{3}a+\frac{8}{27}-2\left(a^2+\frac{4}{3}a+\frac{4}{9}\right)+20a+\frac{40}{3}-112\\
+        &= a^3-\frac{4}{3}a+20a+\frac{8}{27}-\frac{8}{9}+\frac{40}{3}-112\\
+        &= a^3+\frac{56}{3}a+\frac{344}{27}-112\\
+        &= a^3+\frac{56}{3}a-\frac{2680}{27}=0
+        \)
+    \end{align*}
+    \\
+
+    a=u+vとすると\\
+
+    \begin{equation*}
+        \(
+        (u+v)^3+\frac{56}{3} (u+v)-\frac{2680}{27}=0
+        \)
+    \end{equation*}\\
+
+    \(u+v\neq 0\)のとき
+    \begin{displaymath}
+    \left\{
+    \begin{array}{1}
+        \(
+        u^3+v^3=\frac{2680}{27}\\
+        uv=-\frac{56}{9}
+        \)
+    \end{array}
+    \right\
+    \end{displaymath}
+    となり, uとvは二次方程式の解と係数の関係を使って\\
+    \(X^2+qX-\left(\frac{p}{3}\right)^3\)の解の解なので\\
+
+    \begin{equation*}
+        \(
+        X=-\frac{q}{2}\pm \sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}
+        \)
+    \end{equation*}
+    \\
+    これを使うと\\
+
+    \begin{align*}
+        \(
+        u^3, v^3=\frac{1340}{27}\pm \sqrt{\left(\frac{1340}{27}\right)^2+\left(\frac{56}{9}\right)^3}\\
+        &= \frac{1340}{27}\pm \sqrt{\frac{1795600}{729}+\frac{175616}{729}}\\
+        &= \frac{1340}{27}\pm \frac{1404}{27}\\
+        &= \frac{2744}{27}, -\frac{64}{27}
+        \)
+    \end{align*}
+    \\
+
+    考えられるu, vの範囲のうち, 今は四次方程式を解こうとしているから整数部分だけで良く,\\
+    \begin{equation*}
+        \(
+        u, v=\frac{14}{3}, -\frac{4}{3}
+        \)
+    \end{equation*}
+
+    よって, u+v=a, \(t=a+\frac{2}{3}\)より\\
+    t=4\\
+    と求まる. これを (\ref{siki})式に代入して,\\
+
+    \begin{align*}
+        \(
+        (y^2+4)^2=4y^2-24y+36\\
+        &= 4 (y^2-6y+9)\\
+        &= 4 (y-3)^2
+        \)
+    \end{align*}\\
+
+    よって\\
+
+    \begin{equation*}
+        \(
+        y^2+4=\pm 2 (y-3)
+        \)
+    \end{equation*}
+    \\
+
+    この式を解くと\\
+
+    \begin{displaymath}
+        \left\{
+        \begin{array}{1}
+            \(
+            y^2+4=2y-6\rightarrow y^2-2y+10=0\\
+            & y=\frac{2\pm \sqrt{4-40}}{2}=\frac{2\pm 6i}{2}=1\pm 3i\\
+
+            & y^2+4=-2y+6\rightarrow y^2+2y-2=0\\
+            & y=\frac{-2\pm \sqrt{4+8}}{2}=\frac{-2\pm 2\sqrt{3}}{2}=-1\pm \sqrt{3}
+            \)
+        \end{array}
+        \right\
+    \end{displaymath}
+    \\
+    
+    よって答えは\\
+    \begin{equation*}
+        \(
+        \uline{y=1\pm 3i, -1\pm \sqrt{3}}
+        \)
+    \end{equation*}
+    
+\end{enumerate}
+\end{document}

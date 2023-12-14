@@ -1,0 +1,38 @@
+\documentclass[twocolumn, a4j]{article}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+
+\title{サンプル用のTexファイル}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\author{Nozomu Miyamoto\footnotemark[2]　nontan@sfc.wide.ad.jp}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\date{\today}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+  \maketitle
+  \vspace{-6mm}
+  \begin{abstract}
+    ここに概要を書きましょう．
+  \end{abstract}
+  \vspace{2mm}
+\end{@twocolumnfalse}
+]
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[2]{慶應義塾大学 村井研}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\section{はじめに}
+
+  　hoge hoge hoge hoge
+
+\renewcommand{\refname}{参考文献}
+\begin{thebibliography}{数字}
+  \bibitem[opt]{key} 文献情報
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,25 @@
+# Fdb version 4
+["dvipdf"] 0 "build/sample.dvi" "build/sample.pdf" "build/sample" 0 -1
+  "build/sample.dvi" 1681397526 1200 64c3f92e6c805696f1c936db42824780 "latex"
+  (generated)
+  "build/sample.pdf"
+  (rewritten before read)
+["latex"] 1681397526 "/home/asakayusuke/texworks/Test_tex/sample.tex" "build/sample.dvi" "sample" 1681397526 2
+  "/home/asakayusuke/texworks/Test_tex/sample.tex" 1681397525 528 e6b0d849bf620876b46c313749189ecd ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1463434352 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def" 1680206705 30023 a086bd8d9aef8f9c6efca291fd92ba8b ""
+  "/usr/local/texlive/2023/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1677186565 61387 1c16fa09f9aa344f6b7ed4a7e2c399b2 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1601931076 5585 8e4615c54073c390d14154b29cee89cb ""
+  "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1681165822 40967 d940221f8762fd5848760382d97d1226 ""
+  "/usr/local/texlive/2023/texmf-var/web2c/eptex/platex.fmt" 1681391806 7885550 fd418a3225a74f091b2ae95a39908c9b ""
+  "/usr/local/texlive/2023/texmf.cnf" 1681391756 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "build/sample.aux" 1681397526 32 3985256e7290058c681f74d7a3565a19 "latex"
+  "sample.tex" 1681397525 528 e6b0d849bf620876b46c313749189ecd ""
+  (generated)
+  "build/sample.aux"
+  "build/sample.dvi"
+  "build/sample.log"
+  (rewritten before read)

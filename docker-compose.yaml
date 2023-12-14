@@ -1,0 +1,29 @@
+version: "3"
+networks:
+  testnet10:
+    driver: bridge
+
+services:
+  texlive:
+    container_name: tex_docker
+    image: tex-image
+    build:
+      context: .
+      args:
+        - USER_NAME=${USER_NAME}
+        - GROUP_NAME=${GROUP_NAME}
+        - UID=${UID}
+        - GID=${GID}
+    ipc: host
+    tty: true
+    #ports:
+      # "ホストのポート:コンテナのポート"
+     # - "8080:80"
+    user: "${UID}:${GID}"
+    networks:
+      - testnet10
+    volumes:
+      - ./sample:/home/${USER_NAME}/work
+      - ./assets/texworks:/home/${USER_NAME}/texworks
+      - /dev:/dev
+    command: /bin/bash

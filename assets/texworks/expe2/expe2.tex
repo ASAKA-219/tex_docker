@@ -1,0 +1,280 @@
+\documentclass[uplatex,a4paper,11pt,dvipdfmxs]{jsarticle}
+%\usepackage{pdfpages}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\begin{document}
+%\includepdf[pages=-, fitpaper=true]{/home/asakayusuke/Pictures/pdf1.pdf}
+\begin{enumerate}
+    \item {\bf \large 実験目的}\\
+    \quad 増幅回路とは, 振幅の小さな入力信号を振幅の大きな信号にして出力させる回路である. 前回の
+    テーマ１で扱ったバイポーラトランジスタの特性として, 増幅特性があったことを本実験ではより注目する.\\
+    \quad まず一つ目の目的はトランジスタが持つ電流増幅作用を利用して増幅回路を作製することである. 
+    そして二つ目の目的は増幅回路に実際に正弦波信号を入力し, 回路内部で信号が増幅される原理を学ぶことである.\\
+    
+    \item {\bf \large 原理}\\
+    \quad 今回は, 前回のレポートでは扱わなかったトランジスタの電流増幅作用を利用した増幅回路の仕組みを説明しよう. 
+    テーマ1で行った計測した結果のグラフを結合したものを図1に示す. \\
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{/home/asakayusuke/Pictures/z4.png}
+    \caption{トランジスタ増幅回路のしくみ}
+    \end{figure}
+    \\
+    この図のとおり, 入力信号であるベースエミッタの\(I_B-V\textsubscript{BE}特性\)と
+    出力信号であるコレクタエミッタの\(I_C-V\textsubscript{CE}特性\)のグラフは共に正の位置であることから, 正弦波のような
+    符号が入れ替わるような電流がかかった場合, ベースエミッタ間, コレクタエミッタ間に直流バイアス電圧を追加させる必要がある. \\
+    後述するが, 図３のように回路を組むと直流バイアスをかけることができる. 図の (a)点を中心に正弦波の入力電圧V\textsubscript{BE}を
+    かけると, 正弦波状にベース電流\(I_B\)が変化する. すると, コレクタ電流\(I_C\)も同様に正弦波状に入力され, 最終的に増幅された
+    コレクタ・エミッタ間電圧V\textsubscript{CE}として出力される. 本実験でも正弦波状の入力信号を送るが, 
+    図１の直流負荷線に沿った値になる. よってV\textsubscript{CE}は,  (b)点を中心に出力される. この点を動作点という. \\
+    \quad 次にエミッタ接地について説明する. トランジスタ増幅回路では図\ref{figure:em}のように
+    ベース, エミッタ, コレクタの端子が接地されるが, 今回はエミッタを接地させるエミッタ接地
+    回路\footnote{入力と出力の共通端子がエミッタであるため, このように呼ばれている. 筆者はなぜエミッタ
+    が共通端子なのか分かっていない\dots}とする. なぜなら, エミッタ接地方式にすることで, 電圧と電流の両方を増幅
+    できるから電力利得\footnote{エミッタ接地回路において, 出力電圧の振幅はコレクタ負荷抵抗\(R_C\)の電圧降下と等しくなる. 
+    そのため, コレクタ負荷抵抗\(R_C\)を大きくすればするほど出力電圧が大きくなる. 但し, 電源電圧V\textsubscript{CC}
+    より大きな振幅は取れない.}が大きくなるからである. この性質から, エミッタ接地回路は基本的な増幅回路の中で最も主要な
+    回路である. ベースに入力電圧V\textsubscript{in}を印加することで、コレクタから出力電圧V\textsubscript{out}を取り出す回路である. \\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=11cm]{/home/asakayusuke/Pictures/z1.png}
+        \caption{トランジスタ増幅回路のエミッタ接地型 (出典:参考文献\cite{cite})}
+        \label{figure:em}
+    \end{figure}
+    \(I_B-V\textsubscript{BE}\)特性によって
+    \begin{equation}
+        \(
+        Z\textsubscript{in} = \frac{\Delta V\textsubscript{BE}}{\Delta I_B}
+        \)
+    \end{equation}
+    となり, 入力インピーダンスが低くなる. \\
+    \quad 次に電圧増幅率\(A_V\)\footnote{入力信号と出力信号の比率}と
+    電圧利得\(G_v\)\footnote{電圧増幅率をデシベル (dB)に換算した表記である}の計算式を説明する. 
+    \begin{equation}
+        \(
+            A_V=\frac{v_o}{v_i}\\
+        \)
+    \end{equation}
+    \begin{equation}
+        \(
+            G_v=20\times \log\textsubscript{10}A_V
+            = 20\times \log\textsubscript{10}\frac{v_o}{v_i}
+        \)
+    \end{equation}
+    上式で\(v_i\)は入力信号, \(v_o\)は出力信号の振幅電圧値である. \\
+    \quad 次に, エミッタ接地回路の動作について説明する. バイポーラトランジスタと抵抗で構成されるエミッタ接地回路
+    とバイポーラトランジスタの\(I_B-V\textsubscript{BE}特性とI_C-V\textsubscript{CE}特性\)の図\ref{figure:ba}を示す.\\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=11cm]{/home/asakayusuke/Pictures/z2.png}
+        \caption{トランジスタ増幅回路のエミッタ接地型 (出典:参考文献\cite{cite})}
+        \label{figure:ba}
+    \end{figure}
+    「ベースエミッタ間電圧が増える→ベース電流が増える→コレクタ電流が増える→電圧降下が増える→コレクタエミッタ間電圧が減る」
+    という動作が重要である. エミッタ接地回路は入力と出力の変化が逆になるのでこれを
+    逆相\footnote{バイポーラトランジスタの入力電圧 (ベースエミッタ間電圧V\textsubscript{BE})が増加すると, 
+    ベース電流\(I_B\)が増加し, コレクタ電流\(I_C\)が増加するため, 
+    出力電圧 (コレクタエミッタ間電圧V\textsubscript{CE})が減少する. そのため, 入力電圧と出力電圧の位相は180°反転する.}と呼んでいる. \\
+
+    \item {\bf \large 【実験１】}{\large 直流負荷線の測定}\\
+    \label{ott}
+    \begin{enumerate}
+    \item[3.1] 実験方法\\
+    回路図を以下に示す．
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{/home/asakayusuke/Pictures/z3.png}
+    \caption{エミッタ接地方式のトランジスタ増幅回路}
+    \label{figure:i}
+    \end{figure}
+    実験の手順を説明する. まずは直流電源を10[V]まで上げる. そして可変抵抗\(R_V\)を調整し, ベース電流\(I_B\)が変わることで
+    電圧V\textsubscript{RB}を0.05, 0.1, 0.15\dots [V]まで上げる. その時のV\textsubscript{BE}, V\textsubscript{CE}, 
+    \(I_C\)をそれぞれのV\textsubscript{RB}で計測する. また, \(I_B\)もそれぞれの電圧で算出しておく.\\
+
+    \item[3.2] 使用機器\\
+    直流電源 (AD-8723D), 直流電流計 (DCZA21), ユニバーサルボード (TOKUSHUSEIDO, BD 39)，デジタルマルチメーター (東陽テクニカ製), 
+    トランジスタ (2SC1815)\\
+
+    \item[3.3] 実験結果\\
+    \ref{ott}
+    の結果として表\ref{table:gy}を以下に示す.
+    \begin{table}[H]
+        \caption{直流負荷線の測定結果}
+        \label{table:gy}
+        \centering
+        \includegraphics[width=8cm]{/home/asakayusuke/Pictures/z7.png}
+    \end{table}
+    \\
+
+    また, 表\ref{table:gy}のV\textsubscript{CE}と\(I_C\)を抜き出して前回のテーマ１で作成したグラフに要素を追加したのが以下の図である.\\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=9cm]{/home/asakayusuke/Pictures/z8.png}
+        \caption{出力特性\((I_C-V\textsubscript{CE})\)のグラフ}
+        \label{figure:gr1}
+    \end{figure}
+    \\
+    図\ref{figure:gr1}より, 直流負荷線が\(I_C\)とV\textsubscript{CE}の関係を表していることがわかる. 
+    また, 比例関係になっていることが分かる.\\
+
+    \item[3.4] 考察・検討\\
+    直流負荷線の理論値を, RC, RE, VCCの値を使って求める. 前回の実験のグラフに結果を図示する. \\
+    \quad 直流負荷線の計算式 (参考文献\cite{cite}より引用)を以下に示す.\\
+    \begin{equation}
+        \(
+        I_C=-\frac{1}{R_C+R_E}\times V\textsubscript{CE}+\frac{V\textsubscript{CC}}{R_C+R_E}
+        \)
+    \end{equation}
+    この式を利用すれば, 例えばV\textsubscript{CE}=5[V]の時,\\
+    \begin{equation}
+        \(
+        I_C=-\frac{5}{2000+270}+\frac{10}{2000+270}=\frac{5}{2720}
+        \)
+    \end{equation}
+    \begin{equation*}
+        \(
+        \(\therefore \) I_C=1.838\times 10\textsuperscript{-3}[A]=1.838[mA]
+        \)
+    \end{equation*}
+    となる. この結果を表にしたものをこちらに示す.\\
+    \begin{table}[H]
+        \caption{直流負荷線の測定結果}
+        \label{table:j}
+        \centering
+        \includegraphics[width=6cm]{/home/asakayusuke/Pictures/z21.png}
+    \end{table}
+    \\
+    となる. これを図\ref{figure:gr1}のグラフに表すと,\\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=9cm]{/home/asakayusuke/Pictures/z0.png}
+        \caption{図\ref{figure:gr1}に理論値を当てはめたグラフ}
+    \end{figure}
+    となった.このグラフを見ると, 理論式に近い結果になっていることが分かる. しかし, 0[V]の\(I_C\)が少しずれている. 
+    この理由は, 電線の部分で何かが重なってコンデンサにコイルが生じたりコンデンサが２つ出来てしまったりしたと考えられる.\\
+    \end{enumerate}
+
+    \item {\bf \large 【実験２】}{\large 増幅現象の確認}\\
+    \begin{enumerate}
+        \item[4.1] 実験方法\\
+        コレクタエミッタ間の直流電圧V\textsubscript{CE}をデジタルマルチメーターで計測しながら5[V]になるように可変抵抗を回す. 
+        ここで\(I_C\)を計測し\footnote{これが動作点となることで信号を増幅させる. 詳しくは原理を参照.}, 実験１のグラフに書き込む. 
+        そして, 発振器の周波数を1[kHz]にし, オシロスコープのch.1のプローブを図\ref{figure:i}の\textcircled{\scriptsize 1}に接続
+        させる. ここで, 最大電圧が0.5[V], 最小電圧が-0.5[V]になるように発振器出力を調節\footnote{具体的には, amplitudeを
+        回すと交流の振幅が変わるので, これをオシロスコープの波形を中心軸に合わせて\(\pm0.5[V]\)に調整する.}する. そして, オシロスコープ
+        のプローブ (ch.2)を図\ref{figure:i}の\textcircled{\scriptsize 5}に接続し出力波形を観察する. 次に, 
+        \textcircled{\scriptsize 1}\(\sim \)\textcircled{\scriptsize 5}を順に波形の観察をしていく. 終わったら, \textcircled{\scriptsize 1}の
+        入力信号の振幅電圧\(V_I\)と\textcircled{\scriptsize 5}の出力信号の振幅電圧\(V_o\)をデジタルマルチメーターで計測する. \\
+
+        \item[4.2] 実験結果\\
+        \textcircled{\scriptsize 1}と\textcircled{\scriptsize 2}の観察した波形を以下に示す. 
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{/home/asakayusuke/Pictures/IMG_4708.JPG}
+            \caption{1の信号波形}
+            \label{figure:g1}
+        \end{figure}
+        \\
+        \textcircled{\scriptsize 2}と\textcircled{\scriptsize 3}の観察した波形を以下に示す.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{/home/asakayusuke/Pictures/IMG_4709.JPG}
+            \caption{2の信号波形}
+            \label{figure:g2}
+        \end{figure}
+        \\
+        \textcircled{\scriptsize 3}と\textcircled{\scriptsize 4}の観察した波形を以下に示す.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{/home/asakayusuke/Pictures/IMG_4710.JPG}
+            \caption{3の信号波形}
+            \label{figure:g3}
+        \end{figure}
+        \\
+        \textcircled{\scriptsize 4}と\textcircled{\scriptsize 5}の観察した波形を以下に示す.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{/home/asakayusuke/Pictures/IMG_4711.JPG}
+            \caption{4の信号波形}
+            \label{figure:g4}
+        \end{figure}
+        \\
+        \textcircled{\scriptsize 1}と\textcircled{\scriptsize 5}の観察した波形を以下に示す.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=9cm]{/home/asakayusuke/Pictures/IMG_4712.JPG}
+            \caption{1と5の信号波形}
+            \label{figure:g15}
+        \end{figure}
+        \\
+        \item[4.3] 使用機器\\
+        直流電源 (AD-8723D), 直流電流計 (DCZA21), ユニバーサルボード (TOKUSHUSEIDO, BD 39)，デジタルマルチメーター (東陽テクニカ製), 
+        トランジスタ (2SC1815), 発振器\\
+
+        \item[4.4] 考察・検討\\
+        回路内の\textcircled{\scriptsize 1}~\textcircled{\scriptsize 5}の点で信号波形が逐次変化していくことが観察された. 
+        その理由を考察する. \\
+
+        全ての波形で振幅が異なるのは, トランジスタのバイアスがかかるからである. (動作点を中心にかかる)
+        \textcircled{\scriptsize 1}と\textcircled{\scriptsize 2}は, 入力した電圧から出力した電圧に10倍になった. 
+        波形はそのままだった. 理由としては抵抗によって電圧の大きさが変わったのだと考えられる.\\
+
+        \textcircled{\scriptsize 2}と\textcircled{\scriptsize 3}では, 入力と出力は5倍であった. 波形はそのままだった. 
+        理由は抵抗によって電圧の大きさが変わったのだと考えられる.\\
+
+        \textcircled{\scriptsize 3}と\textcircled{\scriptsize 4}では, 入力と出力の割合は0.5倍だった. 
+        波形は入出力で位相が180°ずれていた. 理由はコンデンサによって位相が進むのと抵抗によるものと考えられる.\\
+
+        \textcircled{\scriptsize 4}と\textcircled{\scriptsize 5}では, 入力と出力の割合は約16倍だった. 波形は入出力で位相が９０°ずれていた. 
+        理由はコンデンサが追加されてより位相が進んだと考えられる.\\ 
+
+        最終的な\textcircled{\scriptsize 5}の出力信号波形は\textcircled{\scriptsize 1}の入力信号が増幅されたもので, 振幅は
+        増幅するが符号は反転している. 上で考察したことをもとにその理由を考察する\\
+
+        上の理由を元にすると, コンデンサが途中にあることで位相がずれたと考えられる. \\
+
+        電圧増幅率\(A_V\)は回路定数を使って理論的にどのような式で表されるか調査する、また、その式で導出する\\
+
+        電圧増幅率の他の計算方法として, 電流増幅率hfeを使うものがある. それを紹介する. (参考文献\cite{tran})\\
+        \begin{equation}
+            \(
+            A_V=h\textsubscript{FE}\times \frac{RL (負荷抵抗)}{h\textsubscript{ie} (入力インピーダンス)}
+            \)
+        \end{equation}
+        このRLはコレクタにかかる抵抗2[kΩ]であるが, 入力インピーダンスは簡単には求められない. これの近似式として\\
+        \begin{equation}
+            \(
+            h\textsubscript{ie}=0.026\times \frac{h\textsubscript{FE}}{I_C}
+            \)
+        \end{equation}
+        これで結局\\
+        \begin{equation}
+            \(
+            A_V=\frac{RL\cdot I_C}{0.026}
+            \)
+        \end{equation}
+        となった. ここで, 0.026は熱電圧という定数を使った. よって, この式より, \(I_C\)は\(V_i\)を測ったときの
+        V\textsubscript{CE}が5[V]であったので, それに対応する2.2[mA]を代入すると
+        \begin{equation}
+            \(
+            A_V=\frac{2000\cdot 0.0022}{0.026}=169.13
+            \)
+        \end{equation}
+        となる.\\
+    \end{enumerate}
+    
+    \item {\bf \large 結論}\\
+    \quad 目的にしていたトランジスタ増幅回路を作成と, その増幅回路に正弦波信号を入力することで増幅現象を確認をすることができた. 
+    
+\begin{thebibliography}{9}
+\bibitem{up} 政田元太, 「インテリジェントデバイス実験 資料 テーマ２ トランジスタ増幅回路」, 玉川大学工学部情報通信工学科
+, pp1~12 (2023.5.1)
+\bibitem{suken} [104 数研 物理 313] 「改訂版　物理, 数研出版」, (2023.4,23)
+\bibitem{cite} エミッタ接地回路の『特徴』や『原理』について, Electrical Information, (閲覧日:2023.5.1), 
+[https://detail-infomation.com/amplifier-common-emitter-circuit/]
+\bibitem{tran}「トランジスタの電圧増幅度 |　回路方式によって異なる計算式の解説」, (閲覧日:2023.5,10), 
+https://sagara-works.jp/research-and-development/electronics/transistor-basic/voltage-amplification/.
+\end{thebibliography}
+\end{enumerate}
+\end{document}
